@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class HomeComponent {
   currentUser: any;
-  constructor(private authService: AuthService, private router:Router) {
+  constructor(public authService: AuthService, private router:Router) {
     if (!this.authService.isLoggedIn()){
       this.router.navigate(['/login'])
     }
