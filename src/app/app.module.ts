@@ -13,6 +13,7 @@ import { LoginComponent } from './login/login.component';
 import { SearchPlanetComponent } from './search-planet/search-planet.component';
 import { PlanetListComponent } from './planet-list/planet-list.component';
 import { NumberSpecificPipe } from './planet-list/number.pipe';
+import * as $ from 'jquery';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,6 @@ import { NumberSpecificPipe } from './planet-list/number.pipe';
     HttpClientModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent,canActivate: [AuthGuard] },
-      // { path: 'admin', component: AdminComponent, canActivate: [AdminAuthGuard] },
       { path: 'login', component: LoginComponent },
       { path: 'search-planet', component: SearchPlanetComponent,canActivate: [AuthGuard]  },
       // otherwise redirect to home
