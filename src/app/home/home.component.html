@@ -1,0 +1,13 @@
+<!-- <h1>
+    Home Page</h1> -->
+<div>
+    <span *ngIf="authService.isLoggedIn()">
+    Welcome <strong>{{ authService.retrieveToken().username }}</strong>
+</span>
+    <button *ngIf="authService.isLoggedIn()" style="float:right" type="button" class="btn btn-danger btn-lg" (click)="authService.logout()">Logout</button>
+</div>
+<!-- <ul>
+    <li *ngIf="authService.isLoggedIn()"><a (click)="authService.logout()">Logout</a></li>
+</ul> -->
+
+<app-search-planet *ngIf="authService.isLoggedIn()"></app-search-planet>

@@ -1,0 +1,45 @@
+<hr noshade style="margin-top:2%;">
+<div class="container-fluid list-body" style="margin-top:5%;">
+    <section id="team" class="pb-5">
+        <div class="container">
+            <h5 class="section-title h1">PLANET LIST</h5>
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 col-md-4" *ngFor="let planet of planetList">
+                    <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                        <div class="mainflip">
+                            <div class="frontside">
+                                <div class="card">
+                                    <div class="card-body text-center">
+                                        <h4 class="card-title">{{planet?.name}}</h4>
+                                        <p class="card-text">{{planet?.population | numberspecific:2}}</p>
+                                        <input type="text" data-min="0" data-max="100000000000" value="{{planet?.population}}" class="dial">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="backside  w-100 p-3">
+                                <div class="card">
+                                    <div class="card-body text-center">
+                                        <h4 class="card-title">{{planet?.name | titlecase}}</h4>
+                                        <div class="row">
+                                            <label class="col"><strong>Climate:</strong></label>
+                                            <span class="col">{{planet?.climate | titlecase}}</span>
+                                        </div>
+                                        <div class="row">
+                                            <label class="col"><strong>Terrain:</strong></label>
+                                            <span class="col">{{planet?.terrain | titlecase}}</span>
+                                        </div>
+                                        <div class="row">
+                                            <label class="col"><strong>Gravity:</strong></label>
+                                            <span class="col">{{planet?.gravity | titlecase}}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+</div>

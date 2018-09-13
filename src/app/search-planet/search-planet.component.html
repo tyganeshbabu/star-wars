@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-10 col-lg-8">
+            <form class="card card-sm">
+                <div class="card-body row no-gutters align-items-center">
+                    <div class="col-auto">
+                        <i class="fas fa-search h4 text-body"></i>
+                    </div>
+                    <!--end of col-->
+                    <div class="col">
+                        <input id="typeahead-input" class="form-control form-control-lg form-control-borderless" type="search" placeholder="Search Planets">
+                    </div>
+                    <div class="col-end" *ngIf="loadPlanet">
+                        <svg class="spinner" width="40px" height="40px" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
+                       <circle class="path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle>
+                    </svg>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <!--end of col-->
+    </div>
+    <div *ngIf="planetList">
+        <app-planet-list *ngIf="planetList?.length > 0; else noPlanetFound" [planetList]=planetList></app-planet-list>
+
+        <ng-template #noPlanetFound>
+            <div class="no-planet-found">
+                No Planet Found!!!
+            </div>
+        </ng-template>
+    </div>
+</div>
