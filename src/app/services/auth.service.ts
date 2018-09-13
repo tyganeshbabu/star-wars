@@ -45,7 +45,7 @@ export class AuthService {
   logout() { 
     localStorage.removeItem('token');
     this.currentUser = null;
-    window.location.href="/";
+    window.location.href="/star-wars/";
   }
 
   isLoggedIn() {
